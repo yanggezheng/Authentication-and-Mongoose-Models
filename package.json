@@ -1,0 +1,35 @@
+{
+  "name": "homework05-aintreddit-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/app.mjs",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npx mocha --loader=mock-import test/test-auth.mjs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nyu-csci-ua-0467-001-002-fall-2022/homework05-aintreddit-template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nyu-csci-ua-0467-001-002-fall-2022/homework05-aintreddit-template/issues"
+  },
+  "homepage": "https://github.com/nyu-csci-ua-0467-001-002-fall-2022/homework05-aintreddit-template#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "express": "^4.18.2",
+    "express-session": "^1.17.3",
+    "hbs": "^4.2.0",
+    "mongoose": "^6.7.0",
+    "mongoose-slug-plugin": "^2.1.0"
+  },
+  "devDependencies": {
+    "chai": "^4.3.6",
+    "mocha": "^10.1.0",
+    "mock-import": "^3.0.4"
+  }
+}
