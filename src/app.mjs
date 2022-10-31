@@ -56,15 +56,47 @@ app.get('/', (req, res) => {
 });
 
 app.get('/article/add', (req, res) => {
-  res.render('article-add');
+  if (!req.session.user){
+    res.redirect("/login");
+  }else{
+    res.render('article-add');
+  }
+
 });
 
 app.post('/article/add', (req, res) => {
   // TODO: complete POST /article/add
+  if (!req.session.user){
+    res.redirect("/login");
+  }else{
+    const newArticle = new Article({
+      title: req.body.title,
+      url: req.body.url,
+      description: req.body.description,
+      user: req.session.user._id
+    })
+    newArticle.save(err => {
+      if (err){
+        console.log(err);
+        res.render('article-add', {error: err});
+      }else{
+        res.redirect("/");
+      }
+    })
+  }
 });
 
 app.get('/article/:slug', (req, res) => {
   // TODO: complete GET /article/slug
+  Article.findOne({slug: req.params.slug})
+  .populate("user")
+  .exec((err, result) => {
+    if (err){
+      res.render('error', {message: "error"});
+    }else{
+      res.render('article-detail', {article: result});
+    }
+  })
 });
 
 app.get('/register', (req, res) => {
