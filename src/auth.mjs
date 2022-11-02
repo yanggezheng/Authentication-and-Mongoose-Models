@@ -5,17 +5,13 @@ import mongoose from 'mongoose';
 const User = mongoose.model('User');
 
 const startAuthenticatedSession = (req, user, cb) => {
-    // assuming that user is the user retrieved from the database
   req.session.regenerate((err) => {
     if (!err) {
-      // set a property on req.session that represents the user
       req.session.user = user;
     } else {
-    // log out error
     console.log(err);
     }
     cb(err);
-    // call callback with error
   });
 };
 
@@ -97,7 +93,6 @@ const login = (username, password, errorCallback, successCallback) => {
    });
 };
 
-// creates middleware that redirects to login if path is included in authRequiredPaths
 const authRequired = authRequiredPaths => {
   return (req, res, next) => {
     if(authRequiredPaths.includes(req.path)) {
