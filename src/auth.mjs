@@ -21,8 +21,7 @@ const startAuthenticatedSession = (req, user, cb) => {
 
 const endAuthenticatedSession = (req, cb) => {
   req.session.destroy((err) => { cb(err); });
-}
-
+};
 
 const register = (username, email, password, errorCallback, successCallback) => {
     const errorObj = {};
@@ -62,11 +61,11 @@ const register = (username, email, password, errorCallback, successCallback) => 
                     successCallback(newUser);
                   }
                 })
-              }
+              };
             });
         }
       })
-    }
+    };
 };
 
 const login = (username, password, errorCallback, successCallback) => {

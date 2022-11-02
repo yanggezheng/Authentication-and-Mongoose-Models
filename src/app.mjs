@@ -74,7 +74,7 @@ app.post('/article/add', (req, res) => {
       url: req.body.url,
       description: req.body.description,
       user: req.session.user._id
-    })
+    });
     newArticle.save(err => {
       if (err){
         console.log(err);
@@ -82,7 +82,7 @@ app.post('/article/add', (req, res) => {
       }else{
         res.redirect("/");
       }
-    })
+    });
   }
 });
 
@@ -96,7 +96,7 @@ app.get('/article/:slug', (req, res) => {
     }else{
       res.render('article-detail', {article: result});
     }
-  })
+  });
 });
 
 app.get('/register', (req, res) => {
