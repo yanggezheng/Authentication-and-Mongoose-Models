@@ -14,9 +14,9 @@ const UserSchema = new mongoose.Schema({
     user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'}
   });
 
-// TODO: configure plugin
+// configure plugin
 ArticleSchema.plugin(mongooseSlugPlugin, {tmpl: '<%=title%>'});
-// TODO: register models
+// register models
 mongoose.model('User', UserSchema);
 mongoose.model('Article', ArticleSchema);
 mongoose.connect('mongodb://localhost/hw05');

@@ -65,7 +65,7 @@ app.get('/article/add', (req, res) => {
 });
 
 app.post('/article/add', (req, res) => {
-  // TODO: complete POST /article/add
+  //complete POST /article/add
   if (!req.session.user){
     res.redirect("/login");
   }else{
@@ -87,7 +87,7 @@ app.post('/article/add', (req, res) => {
 });
 
 app.get('/article/:slug', (req, res) => {
-  // TODO: complete GET /article/slug
+  //complete GET /article/slug
   Article.findOne({slug: req.params.slug})
   .populate("user")
   .exec((err, result) => {
