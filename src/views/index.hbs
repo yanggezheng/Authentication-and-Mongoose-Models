@@ -1,5 +1,9 @@
+<h1>This is your ToDo list</h1>
+<div>The name of each task, a short discription and due date are listed below</div>
 <ol>
-{{#each articles as |a|}}
-<li><a href={{url}}>{{title}}</a> - [<a href="/article/{{slug}}">details</a>]</li>
-{{/each}}
+    {{#each tasks as |a|}}
+        <li >{{title}} : [<a href="/tasks/{{slug}}">details</a>]</li>
+    {{/each}}
 </ol>
+
+

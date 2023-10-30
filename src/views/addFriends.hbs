@@ -1,0 +1,20 @@
+<h2>Add new Friends</h2>
+{{#if error}}
+<h2>Error Message</h2>
+{{/if}}
+
+<form method="POST" action="">
+	<div>
+		<label for="username">Name:</label>
+		<input type="text" id="username" name="username" value="">
+	</div>
+	<div>
+		<label for="email">E-mail:</label>
+		<input type="text" id="email" name="email" value="">
+	</div>
+	<div>
+		<label for="phone">Phone Number:</label>
+		<textarea name="phone" id="phone"></textarea>
+	</div>
+	<input type="submit" value="Add">
+</form>
